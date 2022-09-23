@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Project</display-name>
+
+	<!-- 컨트롤러 역할 서블릿 -->
+	<servlet>
+		<servlet-name>ControllerAction</servlet-name>
+		<servlet-class>controller.ControllerAction</servlet-class>
+		<init-param>
+			<param-name>propertyConfig</param-name>
+			<param-value>C:/webtest/4.jsp/2.backend/sou/Project/src/main/webapp/WEB-INF/commandPro.properties</param-value>
+		</init-param>
+	</servlet>
+
+	<!-- 요청이 들어왔을떄 처리해주는 서블릿 찾는 경로지정 -->
+	<servlet-mapping>
+		<servlet-name>ControllerAction</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 메인페이지를 지정해주는 옵션  -->
+  	<welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+</web-app>
+

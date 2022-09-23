@@ -1,0 +1,248 @@
+@charset "UTF-8";
+/* 폰트 */
+ @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+/*상단메뉴를 맨 좌측에 고정(위치)*/
+body,ul{
+  font-family:'Pretendard-Regular';
+  color: black;
+  margin: 0; /*밖의 여백 */
+  padding: 0; /*안쪽 여백*/
+}
+ul{list-style: none; /*마커없앰 */}
+a{text-decoration: none;} /*밑줄 없앰*/
+
+/* 장바구니, 마인페이지 */
+.cart{
+  	position: absolute;
+  	top:10px;
+  	right: 16%;
+}
+.cart > img{
+  	width: 17px;
+  	height: 17px;
+  	margin-right: 5px;
+  	position: relative;
+  	top: 2px;
+}
+.cart > a:hover{
+  	font-weight: bold;
+}
+.mypage{
+  	position: absolute;
+  	top:10px;
+  	right: 8%;
+}
+.mypage > img{
+  	width: 17px;
+  	height: 17px;
+  	margin-right: 5px;
+  	position: relative;
+  	top: 2px;
+}
+.mypage > a:hover{
+ 	font-weight: bold;
+}
+.logout{
+	position: absolute;
+  	top:12px;
+  	right: 3%;
+}
+.logout > a:hover{
+  	font-weight: bold;
+}
+
+/*사이드 메뉴*/
+.sidemenu{
+	position:relative;
+	width: 15%;
+	font-size:20px;
+	line-height:60px;
+	top:150px;
+	padding:30px;
+}
+
+/*글쓰기 버튼*/
+.write{
+	absolute:relative;
+	padding-left:550px;
+	left:550px;
+}
+
+.write a:hover{
+  border-width:0.5px;
+  border-style:solid;
+  width:50px;
+  background-color:#E6E6E6;
+}
+
+/*qna게시판*/
+.qna{
+	position:relative;
+	top:-100px;
+	padding-left:200px;
+}
+
+.qna_board{
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.qna_board thead td{
+  font-weight: bold;
+  vertical-align: top;
+  color: #369;
+  border-bottom: 3px solid #036;
+}
+
+.qna_board tbody th {
+  font-weight: bold;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #f3f6f7;
+  
+}
+.qna_board tbody td {
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+}
+
+/*장바구니*/
+.cartPage{
+	
+}
+
+
+
+/* 드랍다운메뉴 */
+.dropdownmenu > li{ /*부모태그 > 자식태그(부모태그 밑의 자식태그)영역*/
+  float:left; /*왼쪽부터 정렬*/
+  position:relative; /*기준점을 지정 -> 오른쪽 아래 특정위치에 배치*/
+  top:30px;
+  width: 20%;
+}
+.dropdownmenu > li > a { /*상단메뉴의 글자부분*/
+  display: block; /*한 줄은 무조건 점유하고, 다음줄로 개행 */
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  height: 60px;
+  line-height: 60px; /*텍스트 행 사이의 간격에 사용*/
+}
+/* 1레벨 메뉴에 마우스를 갖다댈 때 스타일 적용(대상:hover) */
+.dropdownmenu > li > a:hover{
+  font-weight: bolder;
+  color: #2392CC;
+}
+.dropdownmenu > li:hover > ul{
+  color:#2392CC;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+/*======================*/
+/*2레벨메뉴 설정*/
+.dropdownmenu ul {
+  position: absolute; /*절대좌표*/
+  top:-999px; /*위에 올려서 배치(화면에 보이지 마라)*/
+  z-index: 9999px; /*서브메뉴와 이미지 겹치는 부분 중에서 맨 앞에 내보내기 */
+  /* width:120px; */
+  /* border: 1px solid #cccccc; */
+}
+/*2단계의 글자속성 설정(모든 ul태그 밑에 모든 a 태그)*/
+.dropdownmenu ul a{
+  display: block; /*메뉴 글자의 폭,높이,여백 설정*/
+  color: grey;
+  font-size: 14px;
+  background: #ffffff;
+  line-height: 40px;
+  padding-left:5px; /*왼쪽 경계선과 글자 사이의 거리*/
+}
+/*2레벨메뉴에 마우스를 올렸을 때의 배경색 지정*/
+.dropdownmenu ul a:hover{
+  color: #ffffff; /*흰색*/
+  background-color:#2392CC;
+}
+/*2단계 메뉴항목을 마우스로 갖다 댔을 때 li 태그 밑에 있는 ul태그설정*/
+.dropdownmenu ul li:hover > ul{/*3단계 메뉴*/
+  position: absolute; /*정확하게 좌표값을 설정할 떄 사용*/
+  top: 0; /*y축은 변화없음 그대로 위치*/
+  left: 100%; /*하위 메뉴가 나오는 위치를 지정*/
+  width: 70%;
+}
+/* 컨셉 이미지 */
+.img_1 {
+  position: relative;
+  top: 90px;
+  width: 100%;
+  height: 100%;
+  background-color: #2392CC;
+}
+.img_1 img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 4px;
+}
+.img_2{
+  padding: 0px 165px;
+}
+.img_3{
+  background-color: #2392CC;
+  padding: 0px 165px;
+}
+.img_4{
+  padding: 120px 160px;
+}
+.img_5{
+  background-color:#dcdfdd;
+  padding: 120px 190px;
+}
+/* info */
+section{
+  margin: 30px 0px;
+}
+.company_info{
+  font-size: 11px;
+  color: grey;
+  position: absolute;
+}
+.company_info > li{
+  float: left;
+  position: relative;
+  padding: 10px 50px;
+}
+.company_info li > ul > li{
+  padding: 3px 0px;
+}
+/* footer */
+.ft1{
+  position: relative;
+  bottom: -150px;
+  height: 50px; width: 100%;
+  background-color: black;
+  font-size: 11px;font-weight:lighter; color:white;
+}
+.ft1 > div{
+  padding-top: 17px;
+  padding-left: 10px;
+}
+.nv3{
+  position: relative;
+  bottom: 13px;
+}
+.nv3 ul > li{
+  margin-right: 20px;
+  float: right;
+  color: white;
+}
+.nv3 ul > li > a{
+  color: white;
+}
